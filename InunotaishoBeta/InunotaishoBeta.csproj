@@ -24,6 +24,8 @@
     <Folder Include="ClientApp\src\app\" />
     <Folder Include="ClientApp\src\app\components\" />
     <Folder Include="ClientApp\src\routes\" />
+    <Folder Include="Server\" />
+    <Folder Include="Server\Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\src\app\components\counter\counter.component.html" />
