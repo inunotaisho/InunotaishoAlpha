@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, InjectionToken} from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { loginModel } from '../../models/login.model';
+
+const newToken = new InjectionToken();
 
 @Injectable()
 export class AuthService {
