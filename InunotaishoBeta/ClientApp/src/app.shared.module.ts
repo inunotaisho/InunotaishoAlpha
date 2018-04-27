@@ -1,9 +1,11 @@
-import { CollapseModule, TooltipModule } from 'ngx-bootstrap';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule} from '@angular/common/http';
+import { CollapseModule, TooltipModule} from 'ngx-bootstrap';
+import { NgModule, Inject } from '@angular/core';
+import { CommonModule, APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import { AppComponent } from './app/app.component';
