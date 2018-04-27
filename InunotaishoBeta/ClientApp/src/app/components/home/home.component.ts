@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//var homeComponent = require('./home.component.html');
+
 
 @Component({
-    templateUrl:'./home.component.html' //template: homeComponent
+    templateUrl:'./home.component.html',
 })
 
 export class HomeComponent {
