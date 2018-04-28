@@ -6,6 +6,7 @@ const treeShakableModules = [
     '@angular/animations',
     '@angular/common',
     '@angular/common/http',
+    '@angular/http',
     '@angular/compiler',
     '@angular/core',
     '@angular/forms',
