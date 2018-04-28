@@ -1,17 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, InjectionToken} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { loginModel } from '../../models/login.model';
-
-const newToken = new InjectionToken();
+import {LocalStorage} from './localstorage.service';
 
 @Injectable()
 export class AuthService {
     
      isLoggedIn = false;
 
-     constructor(private http:HttpClient){
-         const token = localStorage.getItem('token')
+     constructor(private http:HttpClient, private local: LocalStorage){
+         const token = this.local.getItem('token')
          if(token){
              this.isLoggedIn = true
          }
@@ -19,7 +18,7 @@ export class AuthService {
 
     setIsLoggedIn = (token: string) => {
         this.isLoggedIn = true;
-        localStorage.setItem('token', token);
+        this.local.setItem('token', token);
     }
     getIsLoggedIn() {
         return this.isLoggedIn
@@ -28,7 +27,8 @@ export class AuthService {
         return this.http.post('/users/login', user);
     }
     logout(){
-        localStorage.removeItem('token')
+        this.local.removeItem('token')
         this.isLoggedIn = false
     }
+
 }
