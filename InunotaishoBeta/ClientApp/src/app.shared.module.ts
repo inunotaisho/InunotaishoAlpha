@@ -24,6 +24,10 @@ import { RegComponent } from './app/components/reg/reg.component';
 import portImgContainer from './app/components/portfolio/images/portfolio.image.component';
 import FroalaEditor from './app/components/write/froala-editor/froala.component';
 
+import { AuthService } from '../src/services/authservice/authentication.service';
+import { AuthGuard } from '../src/services/authguard/authguard.service';
+import { LocalStorage } from '../src/services/authservice/localstorage.service';
+
 
 export function declarations(): any {
     return [
@@ -45,6 +49,7 @@ export function declarations(): any {
 }
 
 @NgModule({
+    
     declarations: [
         AppComponent,
         declarations()
@@ -58,6 +63,14 @@ export function declarations(): any {
         CollapseModule,
         FroalaEditorModule.forRoot(),
         FroalaViewModule.forRoot()
+    ],
+    providers: [
+        AuthService,
+        AuthGuard,
+        {
+            provide: 'LocalStorage', 
+            useFactory: () => (typeof window !== "undefined") ? window.localStorage : {}
+        }
     ]
 })
 export class AppModuleShared {

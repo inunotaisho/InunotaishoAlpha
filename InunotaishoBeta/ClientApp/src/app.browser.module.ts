@@ -9,6 +9,10 @@ import { AppComponent } from './app/app.component';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserPrebootModule } from 'preboot/browser';
 
+import {AuthGuard} from '../src/services/authguard/authguard.service';
+import { AuthService } from './services/authservice/authentication.service';
+import { LocalStorage } from './services/authservice/localstorage.service';
+
 export function getOriginUrl() {
     return window.location.origin;
   }
@@ -33,6 +37,12 @@ export function getOriginUrl() {
             // The server provides these in main.server
             provide: REQUEST,
             useFactory: (getRequest)
+        },
+        AuthService,
+        AuthGuard,
+        {
+            provide: 'LocalStorage', 
+            useFactory: () => (typeof window !== "undefined") ? window.localStorage : {}
         }
     ]
 })

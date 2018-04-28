@@ -10,6 +10,10 @@ import { ServerTransferStateModule } from '@angular/platform-server';
 
 import { ServerPrebootModule } from 'preboot/server';
 
+import {AuthGuard} from '../src/services/authguard/authguard.service';
+import { AuthService } from './services/authservice/authentication.service';
+import { LocalStorage } from './services/authservice/localstorage.service';
+
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -25,6 +29,14 @@ import { ServerPrebootModule } from 'preboot/server';
     //   Leave this commented out for now, as it breaks Server-renders
     //   Looking into fixes for this! - @MarkPieszak
     // ServerTransferStateModule // <-- broken for the time-being with ASP.NET
+    ],
+    providers : [
+        AuthService,
+        AuthGuard,
+        {
+            provide: 'LocalStorage', 
+            useFactory: () => (typeof window !== "undefined") ? window.localStorage : {}
+        }
     ]
 })
 export class AppModule {
