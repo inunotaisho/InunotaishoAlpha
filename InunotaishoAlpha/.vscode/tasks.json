@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/InunotaishoBeta.csproj"
+                "${workspaceFolder}/InunotaishoAlpha.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

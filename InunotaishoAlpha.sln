@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InunotaishoBeta", "InunotaishoBeta\InunotaishoBeta.csproj", "{258E94A7-0861-48F0-B037-B97C1875472C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InunotaishoAlpha", "InunotaishoAlpha\InunotaishoAlpha.csproj", "{258E94A7-0861-48F0-B037-B97C1875472C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

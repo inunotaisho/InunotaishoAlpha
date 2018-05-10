@@ -49,8 +49,8 @@ Thumbs.db
 
 # Visual Studio 2015 cache/options directory
 .vs/
-InunotaishoBeta/wwwroot/dist/
-InunotaishoBeta/ClientApp/dist/
+InunotaishoAlpha/wwwroot/dist/
+InunotaishoAlpha/ClientApp/dist/
 
 # Build results
 [Dd]ebug/
@@ -216,7 +216,7 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
-InunotaishoBeta/node_modules
+InunotaishoAlpha/node_modules
 
 /yarn.lock
 
